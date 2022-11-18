@@ -23,14 +23,51 @@ body {
 	border-bottom: 2px solid #75e575;
 }
 
+.main-header .options-button {
+	display: block;
+	float: left;
+	display: inline-block;
+  cursor: pointer;
+  margin-top: 12px;
+  margin-left: 10px;
+  border-radius: 40px;
+  padding: 10px;
+  padding-left:13px;
+  padding-right: 13px;
+}
+
+.main-header .options-button:hover {
+	background-color: #e4e4e4;
+}
+
+.main-header .options-button div {
+	width: 35px;
+  height: 5px;
+  background-color: #75e575;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.main-header .change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.main-header .change .bar2 {
+	opacity: 0;
+}
+
+.main-header .change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
 .main-header img{
 	float: left;
 	display: block;
 
-	margin: 10px;
-	margin-left: 30px;
-	width: 270px;
-	height: 60px;
+	margin-top: 24px;
+	margin-left: 10px;
+	width: 160px;
+	height: 37px;
 }
 
 .main-header nav {
@@ -39,16 +76,21 @@ body {
 	border: 2px solid #75e575;
 	border-radius: 40px;
 
-	float: left;
+	float: right;
+
+	width: 30%;
 
 	margin: 20px;
-	margin-left: 80px;
+	margin-right: 35%;
 	padding: 10px;
+	padding-left: 20px;
 }
 
 .main-header input[type=text] {
 	background-color: #e4e4e4;
-	width: 400px;
+
+	width: 100%;
+	margin: 0 -10px;
 
 	float: left;
 	font-size: 17px;
@@ -62,5 +104,9 @@ body {
 
 .main-header button {
 	background-color:  #e4e4e4	;
+	
+	float: right;
+	display: block;
+
 	font-size: 17px;
 }
