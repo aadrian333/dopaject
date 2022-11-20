@@ -1,0 +1,121 @@
+<!--
+	Pàgina web d'inspiració:
+	https://www.youtube.com
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="../assets/icon.png" type="image/icon type">
+	<link rel="stylesheet" href="styles.css">
+	<title>Dopaject</title>
+</head>
+<body>
+	<div class="main-header">
+		<!--
+			Animació de la següent pàgina:
+			https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js
+		-->
+		<div class="nav-button"  onclick="toggleAnimation(this)">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+
+		<!--Fer l'animació i modificar la visibilitat del element amb id "nav"-->
+		<script type="text/javascript">
+			function toggleAnimation(x) {
+				x.classList.toggle("change");
+
+				nav_bar = document.getElementById("nav");
+				main = document.getElementsByClassName("main-content")[0];
+				if (nav_bar.style.display == 'block') {
+					nav_bar.style.display = 'none';
+					main.style.left = 0;
+					main.style.width = 'calc(100% - 10px)';
+				} 
+				else {
+					nav_bar.style.display = 'block';
+					main.style.left = 'var(--nav-width)';
+					main.style.width = 'calc(100% - 10px - var(--nav-width))';
+				}
+			}
+		</script>
+
+		<a href="#home ">
+			<img src="../assets/logo_light.png">
+		</a>
+		<!--Element de busqueda-->
+		<div class="search">
+			<input type="text" placeholder="Search..">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</div>
+	</div>
+
+	<!--element nav-->
+	<div id="nav">
+		<nav>
+			<a href="#home">Home</a>
+			<a href="#explore">Explore</a>
+			<a href="#about">About</a>
+			<a href="#contacts">Contacts</a>
+
+		</nav>
+	</div>
+
+	<!--Contingut de la pàgina-->
+	<div class="main-content">
+		<p>Hello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello world</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+		<p>a</p>
+	</div>
+	<footer>
+		
+	</footer>
+</body>
+</html>
