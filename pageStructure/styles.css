@@ -193,7 +193,7 @@ body {
 	margin: 10px;
 	
 	width: calc(100% - 10px);
-	height: calc(100vh - var(--search-height) - 10	px);
+	height: calc(100vh - var(--search-height) - 10px);
 
 	overflow-y: scroll;
 
