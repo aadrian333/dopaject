@@ -196,15 +196,59 @@ main {
 	float: left;
 	left: 0;
 	position: relative;
-	margin: 10px;
 	
-	width: calc(100% - 10px);
+	width: calc(100%);
 	height: calc(100vh - var(--search-height) - 10px);
 
 	overflow-y: scroll;
 
 }
 
+main div {
+	background-color: var(--white);
+	height: 400px;
+	display: block;
+	float: left;
+
+	width: 100%;
+	margin-top: 30px;
+}
+
+main div h1 {
+	margin: 20px;
+	margin-bottom: 10px;
+	font-size: 24px;
+
+	text-decoration: none;
+}
+
+.items {
+	display: flex;	
+	overflow-y: auto;
+	overflow-x: scroll;
+}
+
+main div .items a {
+	display: inline-block;
+	display: block;
+
+	margin: 3px;
+	margin-left: 8px;
+	margin-right: 8px;
+	margin-bottom: 10px;
+
+	color: var(--black);
+
+	text-decoration: none;
+}
+
+main a img {
+	width: 322px;
+	height: auto;
+	object-fit: cover;
+
+	border-radius: 10px;
+}
 
 /* per no supreposar el buscador amb el contingut */
 main, #nav{
