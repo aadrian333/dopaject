@@ -17,12 +17,16 @@
   --black: #000000;
 
   --search-height: 80px;
-  --nav-width: 200px;
+  --nav-width: 250px;
 
   --height-opt-btn: 20px;
   --width-opt-btn: 30px;
   --width-opt-bar: 4px;
   --margin-bar: calc((var(--height-opt-btn) - var(--width-opt-bar) * 2) / 2);
+
+  --height-video: 320px;
+  --width-image: 360px;
+  --height-image: 202px;
 }
 
 body {
@@ -167,7 +171,7 @@ nav a{
 
 	color: var(--black);
 
-	--margin_x: 4px;
+	--margin_x: 6px;
 
 	width: calc(100% - var(--margin_x) * 2);
 
@@ -189,7 +193,7 @@ nav a:hover {
 
 nav a p {
 	position: relative;
-	left: 10px;	
+	left: 20px;	
 }
 
 main {
@@ -206,12 +210,13 @@ main {
 
 main div {
 	background-color: var(--white);
-	height: 400px;
+	height: var(--height-video);
 	display: block;
 	float: left;
 
 	width: 100%;
 	margin-top: 30px;
+	margin-bottom: 100px;
 }
 
 main div h1 {
@@ -233,8 +238,7 @@ main div .items a {
 	display: block;
 
 	margin: 3px;
-	margin-left: 8px;
-	margin-right: 8px;
+	margin-left: 20px;
 	margin-bottom: 10px;
 
 	color: var(--black);
@@ -242,12 +246,24 @@ main div .items a {
 	text-decoration: none;
 }
 
-main a img {
-	width: 322px;
-	height: auto;
-	object-fit: cover;
+main img {
+	width: var(--width-image);
+	height: var(--height-image);
+	object-fit: fill;
 
 	border-radius: 10px;
+}
+
+main a p {
+	width: var(--width-image);
+	height: 70px;
+
+	display: block;
+	overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+
+  font-size: 20px;
 }
 
 /* per no supreposar el buscador amb el contingut */
@@ -260,6 +276,10 @@ main, #nav{
   width: 5px;
 }
 
+::-webkit-scrollbar {
+	height: 5px;
+}
+
 ::-webkit-scrollbar-track {
   background: var(--dark-white); 
 }
@@ -270,5 +290,5 @@ main, #nav{
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }

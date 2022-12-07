@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="../assets/icon.png" type="image/icon type">
+	<link rel="stylesheet" href="styles.css">
+	<title>Dopaject</title>
+</head>
+<body>
+	<main>
+		<h1>Register</h1>
+
+		<p>Username</p>
+		<input type="text" placeholder="Enter username" name="uname" required>
+
+		<p>Password</p>
+		<input type="password" placeholder="Enter password" name="psw" required>
+
+		<button type="submit" onclick="logIn()">Login</button>
+		<label>
+			<input id="checkBox" type="checkbox" checked="checked" name="remember"> Remember me 
+		</label>
+
+		<script type="text/javascript">
+			function logIn(){
+				window.location.href = '../homePage/index.html';
+			}
+		</script>
+
+		<div class="otherOptions">
+			<button>Cancel</button>
+			<a href="../registerPage/index.html">Forgot Password? </a>
+		</div>
+
+	</main>
+</body>
+</html>
