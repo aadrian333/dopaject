@@ -10,7 +10,7 @@
 </head>
 <body>
 	<main>
-		<h1>Log In</h1>
+		<h1>Register</h1>
 
 		<p>Username</p>
 		<input type="text" placeholder="Enter username" name="uname" required>
@@ -18,7 +18,13 @@
 		<p>Password</p>
 		<input type="password" placeholder="Enter password" name="psw" required>
 
-		<button type="submit" onclick="logIn()">Log in</button>
+		<p>Bank account</p>
+		<label>
+			<input id="checkBox" type="checkbox" checked="checked" name="disable" onclick="disable()"> I don't want to specify	 
+		</label>
+		<input type="password" placeholder="Enter bank account" name="bnkacc" required>
+
+		<button type="submit" onclick="logIn()">Register</button>
 		<label>
 			<input id="checkBox" type="checkbox" checked="checked" name="remember"> Remember me 
 		</label>
@@ -27,13 +33,30 @@
 			function logIn(){
 				var passwdValue = document.getElementsByName('psw')[0].value;
 				var unameValue = document.getElementsByName('uname')[0].value;
+				var bnkaccValue = document.getElementsByName('bnkacc')[0].value;
+				var checkState = document.getElementsByName('disable')[0].checked;
+
 				
-				if (passwdValue == '' || unameValue == ''){
+				if (passwdValue == '' || unameValue == '' || !checkState && isNaN(bnkaccValue)){
+					alert("Ether the username, the password or the bank account is not specified or incorrect.");
+					console.log(isNaN(bnkaccValue));
+				}else if (passwdValue == '' || unameValue == '') {
 					alert("Ether the username or the password is not specified or incorrect.");
 				} else {
 					window.location.href = '../homePage/index.html';
 				}
 			}
+
+			function disable() { 
+				var checkState = document.getElementsByName('disable')[0].checked;
+				if (checkState) {
+					document.getElementsByName('bnkacc')[0].disabled = true;
+				} else {
+					document.getElementsByName('bnkacc')[0].disabled = false;
+				}
+			}
+
+			disable()
 		</script>
 
 		<div class="otherOptions">
