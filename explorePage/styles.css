@@ -1,0 +1,197 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	/* per millorar l'encaixament de tots els elements */
+	box-sizing: border-box;
+}
+
+/* variables que utilitzare durant tot el codi */
+:root {
+  --green: #75e575;
+  --white: #ffffff;
+  --dark-white: #e4e4e4;
+  --black: #000000;
+
+  --search-height: 80px;
+  --nav-width: 250px;
+
+  --height-opt-btn: 20px;
+  --width-opt-btn: 30px;
+  --width-opt-bar: 4px;
+  --margin-bar: calc((var(--height-opt-btn) - var(--width-opt-bar) * 2) / 2);
+
+  --height-video: 320px;
+  --width-image: 360px;
+  --height-image: 202px;
+}
+
+body {
+	color: var(--black);
+
+	background: var(--dark-white);
+}
+
+header {
+	position: fixed;
+	display: block;
+
+	/* això és perquè vull que el header sigui sempre a alt de tot */
+	z-index: 2;
+
+	background: var(--white);
+
+	width: 100%;
+	height: var(--search-height);
+	border-bottom: 2px solid var(--green);
+}
+
+header .nav-button {
+	display: block;
+	float: left;
+
+  cursor: pointer;
+
+  margin-top: 12px;
+  margin-left: 10px;
+  border-radius: 40px;
+  padding: 10px;
+  margin-left: 30px;
+}
+
+header .nav-button:hover {
+	background-color: var(--dark-white);
+}
+
+header .nav-button div {
+	width: var(--width-opt-btn);
+  height: var(--width-opt-bar);
+  background-color: var(--green);
+  margin: var(--margin-bar);
+  transition: 0.4s;
+}
+
+/* els tres elements següents són per l'animació */
+header .change .bar1 {
+  transform: translate(0, calc(var(--width-opt-bar) + var(--margin-bar))) rotate(-45deg);
+}
+
+header .change .bar2 {
+	opacity: 0;
+}
+
+header .change .bar3 {
+  transform: translate(0, calc(0px - var(--width-opt-bar) - var(--margin-bar))) rotate(45deg);
+}
+
+header img{
+	float: left;
+	display: block;
+
+	margin-top: 25px;
+	margin-left: 10px;
+	width: 160px;
+	height: 35px;
+}
+
+header .search {
+	background-color: var(--dark-white);
+
+	float: left;
+	position: relative;
+
+	width: 30%;
+	margin: 20px;
+	left: calc((100% - 250px) / 5);
+	padding: 10px;
+	border: 2px solid var(--green);
+	border-radius: 40px;
+}
+
+header .search input[type=text] {
+	background-color: var(--dark-white);
+
+	width: calc(100% - 20px);
+
+	float: left;
+	font-size: 17px;
+
+	outline: none;
+}
+
+/* per fer el contur del navegador d'un altre color */
+header .search:focus-within {
+  border: 2px solid var(--black);
+}
+
+header .search button {
+	background-color: var(--dark-white);
+	color: var(--green);
+
+	float: right;
+	display: block;
+
+	font-size: 17px;
+}
+
+header .search button:hover {
+	color: var(--black);
+	cursor: pointer;
+}
+
+header .search button:active {
+	color: var(--green);
+	cursor: pointer;
+}
+
+nav {
+	background-color: var(--white);
+	display: none;
+	float: left;
+	position: fixed;
+
+	z-index: 1;
+
+	margin-top: var(--search-height);
+
+	width: var(--nav-width);
+	height: calc(100% - var(--search-height));
+
+	border-right: 2px solid var(--green);
+
+	font-size: 23px;
+}
+
+nav a{
+	display: block;
+	position: relative;
+
+	color: var(--black);
+
+	--margin_x: 6px;
+
+	width: calc(100% - var(--margin_x) * 2);
+
+	border-radius: 10px;
+
+	margin-left: var(--margin_x);
+	margin-right: var(--margin_x);
+	margin-top: 10px;
+
+	padding: 10px;
+
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: var(--dark-white);
+	color: var(--green);
+}
+
+nav a p {
+	position: relative;
+	left: 20px;	
+}

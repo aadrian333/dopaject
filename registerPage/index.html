@@ -24,27 +24,29 @@
 		</label>
 		<input type="password" placeholder="Enter bank account" name="bnkacc" required>
 
-		<button type="submit" onclick="logIn()">Register</button>
+		<button type="submit" onclick="register()">Register</button>
 		<label>
 			<input id="checkBox" type="checkbox" checked="checked" name="remember"> Remember me 
 		</label>
 
 		<script type="text/javascript">	
-			function logIn(){
+			function register(){
 				var passwdValue = document.getElementsByName('psw')[0].value;
 				var unameValue = document.getElementsByName('uname')[0].value;
 				var bnkaccValue = document.getElementsByName('bnkacc')[0].value;
 				var checkState = document.getElementsByName('disable')[0].checked;
 
 				
-				if (passwdValue == '' || unameValue == '' || !checkState && isNaN(bnkaccValue)){
+				if ((passwdValue == '' || unameValue == '' || isNaN(bnkaccValue)) && !checkState){
 					alert("Ether the username, the password or the bank account is not specified or incorrect.");
-					console.log(isNaN(bnkaccValue));
 				}else if (passwdValue == '' || unameValue == '') {
 					alert("Ether the username or the password is not specified or incorrect.");
 				} else {
 					window.location.href = '../homePage/index.html';
 				}
+
+				console.log(passwdValue, unameValue, checkState, isNaN(bnkaccValue))
+				console.log((passwdValue == '' || unameValue == '') && !checkState && isNaN(bnkaccValue)	, passwdValue == '' || unameValue == '');
 			}
 
 			function disable() { 
@@ -60,9 +62,14 @@
 		</script>
 
 		<div class="otherOptions">
-			<button>Cancel</button>
-			<a href="../registerPage/index.html">Forgot Password? </a>
+			<button onclick="home()">Cancel</button>
 		</div>
+
+		<script type="text/javascript">
+			function home(){
+				window.location.href = '../homePage/index.html';
+			}
+		</script>
 
 	</main>
 </body>
