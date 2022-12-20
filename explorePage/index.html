@@ -50,18 +50,73 @@
 		</div>
 	</header>
 
-	<script type="text/javascript">
-
-	</script>
-
 	<!--element nav-->
 	<nav>
 		<a href="../homePage/index.html"><p>Home</p></a>
-		<a href="../explorePage/index.html"><p>Explore</p></a>
 		<a href="../aboutPage/index.html"><p>About</p></a>
-		<a href="../contactsPage/index.html"><p>Contacts</p></a>
+		<a href="../explorePage/index.html"><p>Explore</p></a>
 		<a href="../registerPage/index.html"><p>Register</p></a>
 		<a href="../logInPage/index.html"><p>Log in</p></a>
 		<a href="../profilePage/index.html"><p>Profile</p></a>
+		<a href="../contactsPage/index.html"><p>Contacts</p></a>
 	</nav>
-</body>.
+	<main>
+		<a class="video" href="https://media.istockphoto.com/id/148543868/photo/park-guell-in-barcelona-spain.jpg?s=612x612&w=0&k=20&c=IYdRNJtNOxNaySqP7oKe37TR7XBQncj623Ye13qCxBs=">
+			<img src="https://media.istockphoto.com/id/148543868/photo/park-guell-in-barcelona-spain.jpg?s=612x612&w=0&k=20&c=IYdRNJtNOxNaySqP7oKe37TR7XBQncj623Ye13qCxBs=">
+			<p id="description-video">Name NameNameNameNameNameNameNameNameNameNameNameNameNa meNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameNameName</p>
+		</a>
+		<a class="video" href="https://i.ytimg.com/vi/Z6inVqdMpKI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAJHmVpE1tc3orpsiaD_s_E4m-x-w">
+			<img src="https://i.ytimg.com/vi/Z6inVqdMpKI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAJHmVpE1tc3orpsiaD_s_E4m-x-w">
+			<p>Name</p>
+		</a>
+		<a  class="video" href="https://media.istockphoto.com/id/148543868/photo/park-guell-in-barcelona-spain.jpg?s=612x612&w=0&k=20&c=IYdRNJtNOxNaySqP7oKe37TR7XBQncj623Ye13qCxBs=">
+			<img src="https://media.istockphoto.com/id/148543868/photo/park-guell-in-barcelona-spain.jpg?s=612x612&w=0&k=20&c=IYdRNJtNOxNaySqP7oKe37TR7XBQncj623Ye13qCxBs=">
+			<p>Name</p>
+		</a>
+		<a class="video" href="https://media.istockphoto.com/id/148543868/photo/park-guell-in-barcelona-spain.jpg?s=612x612&w=0&k=20&c=IYdRNJtNOxNaySqP7oKe37TR7XBQncj623Ye13qCxBs=">
+			<img src="https://media.istockphoto.com/id/148543868/photo/park-guell-in-barcelona-spain.jpg?s=612x612&w=0&k=20&c=IYdRNJtNOxNaySqP7oKe37TR7XBQncj623Ye13qCxBs=">
+			<p>Name</p>
+		</a>
+		
+		<!-- Les fletxes per navegar dintre del explorador -->
+		<button class="arrow left" onclick="moveLeft()">&#10094;</button>
+		<button class="arrow right" onclick="moveRight()">&#10095;</button>
+	</main>
+
+	<script>
+		var videoIndex = 0;
+		let videos = document.getElementsByClassName('video');
+		iterate();
+
+		function updateDisplay(){
+			for (let i = 0; i < videos.length; i++) {
+				videos[i].style.display = "none";
+			}
+
+			videos[videoIndex].style.display = "block";
+		}
+
+		function iterate() {
+			updateDisplay();
+
+			videoIndex++;
+			if (videoIndex >= videos.length) videoIndex = 0;
+
+			setTimeout(iterate, 6000);
+		}
+
+		function moveLeft() {
+			videoIndex--;
+			if (videoIndex < 0) videoIndex = videos.length - 1;
+
+			updateDisplay()
+		}
+
+		function moveRight() {
+			videoIndex++;
+			if (videoIndex >= videos.length) videoIndex = 0;
+
+			updateDisplay()
+		}
+	</script>
+</body>

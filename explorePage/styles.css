@@ -23,10 +23,6 @@
   --width-opt-btn: 30px;
   --width-opt-bar: 4px;
   --margin-bar: calc((var(--height-opt-btn) - var(--width-opt-bar) * 2) / 2);
-
-  --height-video: 320px;
-  --width-image: 360px;
-  --height-image: 202px;
 }
 
 body {
@@ -194,4 +190,65 @@ nav a:hover {
 nav a p {
 	position: relative;
 	left: 20px;	
+}
+
+main {
+	left: 0;
+	top: var(--search-height);
+	position: relative;
+	
+	width: 100%;
+	height: calc(100vh - var(--search-height) - 5px);
+
+}
+
+main img {
+	width: 100%;
+	height: calc(100vh - var(--search-height) - 5px);
+
+	object-fit: cover;
+}
+
+
+main p {
+	color: var(--black);
+	background-color: rgb(240, 240, 240, .4);
+	position: absolute;
+
+	left: 20px;
+	top: calc(30px);
+	padding: 10px;
+	max-width: 20vw;
+	border-radius: 5px;
+
+	text-decoration: none;
+	font-size: 20px;
+
+	overflow: hidden;
+	white-space: normal;
+	text-overflow: ellipsis;
+}
+
+.arrow {
+	z-index: 1;
+	position: absolute;
+
+	font-size: 30px;
+	padding: 5px 10px 10px 10px;
+	background-color: rgb(240, 240, 240, .6);
+}
+
+.arrow:hover {
+	background-color: var(--white);
+	cursor: pointer;
+}
+
+.left {
+	top: 45%;
+	left: 0;
+}
+
+.right {
+	top: 45%;
+	right: 0;
 }
